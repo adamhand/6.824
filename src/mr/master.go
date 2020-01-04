@@ -9,6 +9,8 @@ import "net/http"
 
 type Master struct {
 	// Your definitions here.
+	files []string
+	nReduce int
 
 }
 
@@ -58,7 +60,10 @@ func MakeMaster(files []string, nReduce int) *Master {
 	m := Master{}
 
 	// Your code here.
+	m.files = files
+	m.nReduce = nReduce
 
+	m.server()
 
 	return &m
 }
